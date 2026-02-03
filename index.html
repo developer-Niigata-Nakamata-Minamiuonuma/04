@@ -1,101 +1,138 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>データ通信量（模擬）</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakuten Mobile（模擬）</title>
 
-    .card {
-      background: #fff;
-      width: 320px;
-      padding: 24px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f2f2f2;
+}
 
-    .title {
-      font-size: 15px;
-      color: #666;
-      margin-bottom: 16px;
-    }
+.header {
+  background: #bf0000;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-    .circle-wrap {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-    }
+.container {
+  padding: 16px;
+}
 
-    svg {
-      transform: rotate(-90deg);
-    }
+.status {
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
 
-    .bg {
-      fill: none;
-      stroke: #eee;
-      stroke-width: 16;
-    }
+.status div {
+  margin-bottom: 6px;
+}
 
-    .progress {
-      fill: none;
-      stroke: #bf0000; /* 楽天レッド */
-      stroke-width: 16;
-      stroke-linecap: round;
-      stroke-dasharray: 565;
-      stroke-dashoffset: 0;
-      transition: stroke-dashoffset 1s ease;
-    }
+.circle-wrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+}
 
-    .center-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 32px;
-      font-weight: bold;
-      color: #bf0000;
-    }
+svg {
+  transform: rotate(-90deg);
+}
 
-    .sub {
-      font-size: 14px;
-      color: #999;
-      margin-top: 12px;
-    }
+.bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 16;
+}
 
-    .plan {
-      margin-top: 16px;
-      font-size: 13px;
-      color: #333;
-    }
-  </style>
+.progress {
+  fill: none;
+  stroke: #bf0000;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-dasharray: 565;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 34px;
+  font-weight: bold;
+  color: #bf0000;
+}
+
+.label {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.footer div {
+  text-align: center;
+  color: #666;
+}
+
+.footer .active {
+  color: #bf0000;
+  font-weight: bold;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <div class="title">今月のデータ通信量</div>
+<div class="header">Rakuten Mobile</div>
 
-    <div class="circle-wrap">
-      <svg width="200" height="200">
-        <circle class="bg" cx="100" cy="100" r="90"></circle>
-        <circle class="progress" cx="100" cy="100" r="90"></circle>
-      </svg>
-      <div class="center-text">無制限</div>
-    </div>
+<div class="container">
 
-    <div class="sub">高速データ通信</div>
-    <div class="plan">楽天最強プラン（模擬）</div>
+  <div class="status">
+    <div>提供通信：Rakuten</div>
+    <div>通信状態：良好</div>
+    <div>通信方式：5G</div>
   </div>
+
+  <div class="circle-wrap">
+    <svg width="220" height="220">
+      <circle class="bg" cx="110" cy="110" r="90"></circle>
+      <circle class="progress" cx="110" cy="110" r="90"></circle>
+    </svg>
+    <div class="center-text">無制限</div>
+  </div>
+
+  <div class="label">今月のデータ通信量</div>
+
+</div>
+
+<div class="footer">
+  <div class="active">ホーム</div>
+  <div>利用状況</div>
+  <div>設定</div>
+</div>
 
 </body>
 </html>
