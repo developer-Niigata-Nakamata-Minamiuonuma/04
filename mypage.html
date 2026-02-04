@@ -58,6 +58,16 @@ body {
   margin-top: 4px;
 }
 
+/* ===== 名前横並び ===== */
+.name-row {
+  display: flex;
+  gap: 12px;
+}
+
+.name-item {
+  flex: 1;
+}
+
 /* ===== ボタン ===== */
 .action-link,
 .link-outline {
@@ -68,11 +78,6 @@ body {
   border-radius: 10px;
   font-size: 14px;
   margin-top: 10px;
-}
-
-.action-link {
-  background: #bf0000;
-  color: #fff;
 }
 
 .link-outline {
@@ -109,28 +114,46 @@ body {
 
 <div class="container">
 
-  <!-- 利用者名 -->
+  <!-- 利用者名（横並び） -->
   <div class="card">
     <div class="card-title">ご利用者さま</div>
-    <div class="value">山田 太郎</div>
-    <div class="sub">ヤマダ タロウ</div>
+
+    <div class="name-row">
+      <div class="name-item value">山田</div>
+      <div class="name-item value">太郎</div>
+    </div>
+
+    <div class="name-row sub">
+      <div class="name-item">ヤマダ</div>
+      <div class="name-item">タロウ</div>
+    </div>
   </div>
 
   <!-- 利用者情報 -->
   <div class="card">
     <div class="card-title">利用者情報</div>
 
-    <div class="sub">姓</div>
-    <div class="value">山田</div>
+    <div class="name-row">
+      <div class="name-item">
+        <div class="sub">姓</div>
+        <div class="value">山田</div>
+      </div>
+      <div class="name-item">
+        <div class="sub">名</div>
+        <div class="value">太郎</div>
+      </div>
+    </div>
 
-    <div class="sub" style="margin-top:8px;">名</div>
-    <div class="value">太郎</div>
-
-    <div class="sub" style="margin-top:8px;">姓（カナ）</div>
-    <div class="value">ヤマダ</div>
-
-    <div class="sub" style="margin-top:8px;">名（カナ）</div>
-    <div class="value">タロウ</div>
+    <div class="name-row" style="margin-top:10px;">
+      <div class="name-item">
+        <div class="sub">姓（カナ）</div>
+        <div class="value">ヤマダ</div>
+      </div>
+      <div class="name-item">
+        <div class="sub">名（カナ）</div>
+        <div class="value">タロウ</div>
+      </div>
+    </div>
 
     <!-- 契約書 -->
     <a
